@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "reserve.h"
+#include<QMessageBox>
+//#include "status.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -14,12 +15,18 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_Continuebutton_clicked()
 {
-    hide();
-    reserve a;
-    a.setModal(true);
-    a.setWindowTitle("Reservation Page");
-    a.exec();
+  //  ui->Status->setText("Button is clicked");
+  //  QMessageBox::warning(this,"Notice","By Clicking 'OK', credits shall be debited from your account! ");
+
+   // status status_A;
+  // status_A.setModal(true);
+  // status_A.exec();
+   hide();
+   secDialog = new SecDialog(this);
+   secDialog->show();
+
+
 
 }
